@@ -138,7 +138,31 @@ Architecture prevents cascading failures.
 - **Frontend is independent.** The frontend consumes the API. It can be rebuilt, reskinned, or replaced without touching the backend.
 - **Tasks are self-contained.** A broken task cartridge affects that task only. Other tasks continue working.
 
-### 12. Accessibility & Inclusion (The Open Door)
+### 12. AI Output Safety (The Guardrail)
+*Motto: "The Trickster is adversarial by design. The guardrails are not optional."*
+
+Prompt instructions are suggestions to the model, not guarantees. For a platform where an adversarial AI talks to minors, safety must be enforced programmatically — not hoped for.
+- **Output validation.** AI responses pass through a content safety check before reaching the student. Responses that cross content boundaries (real harm, real hate, real personal attacks) are caught and replaced with a safe fallback — not silently, but with a logged incident.
+- **Topic boundaries are code, not prose.** The list of forbidden content areas (self-harm, real violence, sexual content, real-world radicalisation) is defined in a structured format the safety layer can check against — not buried in a prompt the model might ignore.
+- **Escalation is bounded.** The Trickster adapts and pushes back — but there's a ceiling. The system tracks conversational intensity and intervenes if the adversarial pressure crosses a threshold, regardless of what the prompt says.
+- **Prompt change regression.** Any change to Trickster prompts runs against a safety test suite before deployment. A prompt edit that passes the golden set for quality but fails the safety set does not ship.
+- **Model change validation.** Swapping models (Principle 8) is easy. But a new model may behave differently under adversarial pressure. Model changes require a safety evaluation pass, not just a functional one.
+
+### 13. Security by Design (The Locked Classroom)
+*Motto: "We're teaching students to think like attackers. Assume they will."*
+
+This platform handles minors' data, teacher curricula, and AI systems that students interact with directly. Security is not a feature — it's a constraint on every design decision.
+- **Prompt injection defence.** Students type freeform text that reaches an AI. They will try to jailbreak the Trickster. Input sanitisation, output validation, and system prompt isolation are mandatory — not because students are malicious, but because we taught them to probe.
+- **Tenant isolation.** A student in School A must never see data from School B. A teacher must never see another school's curricula. Multi-tenant boundaries are enforced at the data layer, not just the UI.
+- **Least privilege.** Students see their own data. Teachers see anonymous class-level insights. Admins see school-level aggregates. No role sees more than it needs. API endpoints enforce this, not just the frontend.
+- **No secrets in the client.** API keys, model credentials, and internal endpoints never reach the browser. The frontend is untrusted.
+- **Rate limiting.** AI endpoints have per-student and per-school rate limits. A single student's runaway session must not exhaust the school's token budget or the platform's API quota.
+- **Audit trail.** Authentication events, role changes, data exports, and data deletions are logged. Not for surveillance — for accountability when something goes wrong.
+- **Error opacity.** Internal errors return generic messages to students. Stack traces, model names, and system paths never leak to the client. Debug information lives in server logs, not HTTP responses.
+- **Database discipline.** Every query uses parameterised statements — no string interpolation, no exceptions. All database access goes through the data layer interface, never directly from route handlers. Schema migrations are reviewed for data exposure. Backup and restore procedures exist and are tested. Connection credentials are environment variables, never committed to source.
+- **Dependency hygiene.** Third-party packages are pinned and reviewed. The attack surface of an educational platform used by minors is not the place for bleeding-edge dependencies.
+
+### 14. Accessibility & Inclusion (The Open Door)
 *Motto: "Educational infrastructure is for everyone."*
 
 This platform will be used by diverse students across hundreds of schools.
@@ -147,8 +171,9 @@ This platform will be used by diverse students across hundreds of schools.
 - **Localisation-ready.** Lithuanian is the primary language. Latvian and English are planned. The architecture supports language packs from day one without retrofitting.
 - **Cognitive load.** Clear, calm UI. No visual overload. The Trickster's theatrics live in the text, not in flashing UI elements.
 - **Browser-first.** Standard web application. Desktop browser is the primary target. Responsive design is nice-to-have, not a requirement. Mobile apps are a future consideration, not initial scope.
+- **Voice-mode ready.** Blind students can interact with AI through voice without a screen reader — the conversational core of the platform is naturally voice-compatible. To keep this path open: API responses must be semantic (content, not rendering instructions), task cartridges must include text descriptions for all visual assets, evaluation must judge what the student *said* not how they *clicked*, and timeout budgets must be configurable per modality.
 
-### 13. Multimodal Learning (The Whole Brain)
+### 15. Multimodal Learning (The Whole Brain)
 *Motto: "Not everyone learns by reading."*
 
 The platform supports multiple learning modalities — but only where they serve the task.
@@ -158,7 +183,7 @@ The platform supports multiple learning modalities — but only where they serve
 - **Kinaesthetic (digital).** Investigation trees, timeline scrubbing, the physical act of typing a response under social pressure.
 - **Pre-generated assets.** Multimodal content is authored and reviewed, not generated at runtime. Quality and cost are controlled.
 
-### 14. Honest Engineering (The Pragmatism Principle)
+### 15. Honest Engineering (The Pragmatism Principle)
 *Motto: "Ship what works. Document what's missing. Don't pretend."*
 
 This is a volunteer-built platform with real constraints. We build honestly within them.
@@ -196,6 +221,14 @@ When reviewing a vision document, phase plan, or implementation, use these quest
 - Is this accessible in a browser? With a screen reader? In Lithuanian?
 - Does the difficulty adapt to the student, or is it one-size-fits-all?
 
+### Security
+- Can a student's freeform input reach the AI without sanitisation? What's the prompt injection surface?
+- Is tenant isolation enforced at the data layer? Could a crafted request leak cross-school data?
+- Does this endpoint enforce role-based access, or does it trust the frontend?
+- Do error responses leak internal details (paths, model names, stack traces)?
+- Are there rate limits on AI-consuming endpoints?
+- Do all database queries use parameterised statements? Does any user input reach a query without going through the data layer?
+
 ### Scale & Cost
 - What happens at 800 schools? Does this scale horizontally?
 - What's the AI cost per student? Is there a cheaper model that would work?
@@ -203,6 +236,6 @@ When reviewing a vision document, phase plan, or implementation, use these quest
 
 ---
 
-*Framework version: 1.0*
+*Framework version: 1.1*
 *Created: 2026-02-18*
 *Scope: Makaronas platform (all visions, all phases)*

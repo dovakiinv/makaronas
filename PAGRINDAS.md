@@ -12,7 +12,7 @@ Makaronas nėra eilinė interneto aplikacija. Tai edukacinis įrankis, naudojant
 ## Apimtis
 
 ### Ką kuriame
-Interaktyvią platformą, kurioje DI valdomas priešiškas dialogas moko mokinius atpažinti žiniasklaidos manipuliacijas — antraštes, selektyviai parinktas citatas, sufabrikuotas citatas, struktūrinį šališkumą, socialinę inžineriją ir psichologinius trigerius, kurie visa tai įgalina.
+Interaktyvią platformą, kurioje DI valdomas priešiškas dialogas moko mokinius atpažinti manipuliacijas ten, kur jie jas iš tikrųjų sutinka — socialinių tinklų srautuose, komentarų skiltyse, grupių pokalbiuose, persiųstose ekrano nuotraukose ir atsainiuose teiginiuose, kurie pasiekia juos per draugus ir šeimą. Technikos yra amžinos (selektyviai parinktos citatos, sufabrikuotos citatos, struktūrinis šališkumas, socialinė inžinerija), bet perdavimo kanalas yra tarpasmeninis: kažkas, kuo pasitiki, dalinasi kažkuo, ko nepatikrino, ir instinktas yra perduoti toliau. Platforma moko mokinius nutraukti tą grandinę — patikrinti prieš dalinantis, sustoti prieš persiunčiant.
 
 ### Kam skirta
 - **Mokiniams:** 15–18 metų amžiaus (pradinė apimtis). Ateityje gali būti išplėsta jaunesnėms ir vyresnėms amžiaus grupėms. Visi projektavimo sprendimai orientuojasi į jauniausią amžiaus ribą.
@@ -41,6 +41,7 @@ Kiekviena funkcija, kiekviena užduotis, kiekviena DI sąveika tarnauja vienam t
 - **Patirtis, ne paskaita.** Mokiniai mokosi būdami apgauti, o ne klausydami, kaip apgaulės atrodo.
 - **Instinktas, ne žinios.** Tikslas — ištreniruotas refleksas, ne įsiminta manipuliacijos technikų sąrašas.
 - **Augimas, ne balai.** Jokių taškų, pažymių, lyderių lentelių. Platforma seka modelius ir augimą, ne pasiekimus.
+- **Nutrauk grandinę.** Dezinformacija pasiekia paauglius per žmones, kuriais jie pasitiki — draugo istorija, ekrano nuotrauka grupės pokalbyje, tėvų atsaini pastaba. Platforma moko mokinius patikrinti prieš perduodant kažką toliau, o ne tik atpažinti manipuliaciją, kai ją mato.
 
 ### 2. Moralinis pranašumas (Nekeičiama)
 *Šūkis: „Jei platforma manipuliuoja mokiniu — jau pralaimėjome."*

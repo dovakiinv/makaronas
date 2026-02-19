@@ -12,7 +12,7 @@ Makaronas is not a generic web app. It is an educational tool that uses AI to te
 ## Scope
 
 ### What We're Building
-An interactive platform where AI-driven adversarial dialogue teaches students to recognise media manipulation — headlines, cherry-picked citations, fabricated quotes, structural bias, social engineering, and the psychological triggers that make all of these work.
+An interactive platform where AI-driven adversarial dialogue teaches students to recognise manipulation in the spaces where they actually encounter it — social media feeds, comment sections, group chats, shared screenshots, and the casual claims that reach them through friends and family. The techniques are timeless (cherry-picked citations, fabricated quotes, structural bias, social engineering), but the delivery channel is peer-to-peer: someone you trust shares something they didn't verify, and the instinct is to pass it on. The platform trains students to break that chain — to verify before spreading, to pause before sharing.
 
 ### Who It's For
 - **Students:** Ages 15-18 (initial scope). May expand to younger and older age groups in future. All design decisions assume the youngest end of the range.
@@ -41,6 +41,7 @@ Every feature, every task, every AI interaction serves one purpose: teaching stu
 - **Experience over lecture.** Students learn by being tricked, not by being told what tricks look like.
 - **Instinct over knowledge.** The goal is a trained reflex, not a memorised list of manipulation techniques.
 - **Growth over scores.** No points, no grades, no leaderboards. The platform tracks patterns and growth, not performance.
+- **Break the chain.** Misinformation reaches teenagers through people they trust — a friend's story, a screenshot in a group chat, a parent's casual remark. The platform teaches students to verify before passing something on, not just to recognise manipulation when they see it.
 
 ### 2. Moral High Ground (The Non-Negotiable)
 *Motto: "If the platform manipulates the student, we've already lost."*
@@ -102,14 +103,14 @@ The platform teaches both information literacy and AI literacy — not as separa
 - **The fourth wall break.** At key moments, the Trickster drops character entirely and speaks as an AI about what AI can do. This is the deepest teaching moment.
 
 ### 8. Team Accessibility (The Handoff Rule)
-*Motto: "If the team can't change it without calling Vinga, it's not done."*
+*Motto: "If the team can't change it without calling the original author, it's not done."*
 
 The platform will be maintained by a technical team without a dedicated AI specialist. Everything must be accessible.
 - **Prompts are plain Markdown.** No special syntax, no code. The team opens a file, reads it, edits it. Git tracks the changes.
 - **Model swapping is one line.** Change the model ID in `models.py`, optionally write a model-specific prompt file. Done.
 - **Architecture is documented with rationale.** Not just "what" but "why." Future maintainers need to understand the reasoning behind decisions, not just follow instructions.
 - **Hooks are clearly marked.** Every stub says what it does, what replaces it, and what interface to satisfy.
-- **AI complexity is encapsulated.** The context management layer (layering, budgeting, prioritisation) is Vinga's domain, but it's documented well enough for a competent developer to debug and modify.
+- **AI complexity is encapsulated.** The context management layer (layering, budgeting, prioritisation) is complex, but it's documented well enough for a competent developer to debug and modify.
 
 ### 9. Cost Consciousness (The Token Tax)
 *Motto: "Every AI call has a price. Every price needs justification."*

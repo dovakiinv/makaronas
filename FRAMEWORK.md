@@ -183,7 +183,7 @@ The platform supports multiple learning modalities — but only where they serve
 - **Kinaesthetic (digital).** Investigation trees, timeline scrubbing, the physical act of typing a response under social pressure.
 - **Pre-generated assets.** Multimodal content is authored and reviewed, not generated at runtime. Quality and cost are controlled.
 
-### 15. Honest Engineering (The Pragmatism Principle)
+### 16. Honest Engineering (The Pragmatism Principle)
 *Motto: "Ship what works. Document what's missing. Don't pretend."*
 
 This is a volunteer-built platform with real constraints. We build honestly within them.
@@ -209,6 +209,7 @@ When reviewing a vision document, phase plan, or implementation, use these quest
 - Is the AI responding to what this specific student said and did?
 - What happens if the AI fails? Is there a fallback?
 - What's the token cost per student? Is the model choice justified?
+- Does AI output pass through a safety check before reaching the student? What happens if the model generates something outside content boundaries?
 
 ### Team Handoff
 - Can the team modify this without AI expertise?

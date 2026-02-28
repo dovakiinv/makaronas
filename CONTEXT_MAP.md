@@ -12,10 +12,10 @@ The system prompt is assembled by `ContextManager` (`backend/ai/context.py`). Ea
 
 | Layer | Source | Content | When absent |
 |-------|--------|---------|-------------|
-| **1. Persona** | `prompts/tasks/{task_id}/persona.md` or `prompts/default/persona.md` | Trickster character definition, voice, attitude | Layer skipped (no persona instruction) |
-| **2. Behaviour** | `prompts/tasks/{task_id}/behaviour.md` or `prompts/default/behaviour.md` | Dialogue strategy, exchange pacing, how to push back | Layer skipped |
-| **3. Safety** | `prompts/tasks/{task_id}/safety.md` or `prompts/default/safety.md` | Hard safety boundaries for prompt-level enforcement | Layer skipped |
-| **4. Task override** | `prompts/tasks/{task_id}/{provider}.md` (optional) | Provider-specific tuning (e.g., Gemini-specific phrasing) | Layer skipped (uses base prompts only) |
+| **1. Persona** | `prompts/trickster/persona_base.md` (or `persona_{provider}.md`) | Trickster character definition, voice, attitude | Enforced at startup — `validate_task_prompts()` raises error if base file missing |
+| **2. Behaviour** | `prompts/trickster/behaviour_base.md` (or `behaviour_{provider}.md`) | Dialogue strategy, exchange pacing, how to push back | Enforced at startup — same |
+| **3. Safety** | `prompts/trickster/safety_base.md` (or `safety_{provider}.md`) | Hard safety boundaries for prompt-level enforcement | Enforced at startup — same |
+| **4. Task override** | `prompts/tasks/{task_id}/trickster_base.md` (or `trickster_{provider}.md`) | Task-specific Trickster instructions (persona adjustments, pattern hints, medium-specific guidance) | Layer skipped (task override is optional) |
 | **5. Task context** | Cartridge data: `ai_config.persona_mode`, `session.current_phase`, `evaluation.patterns_embedded`, `evaluation.checklist`, `evaluation.pass_conditions` | What the Trickster is trying to do in this task — patterns to embed, evaluation criteria, pass/fail conditions | Minimal header only |
 | **6. Safety config** | Cartridge: `safety.content_boundaries`, `safety.intensity_ceiling` | Runtime safety parameters (topic boundaries, intensity cap) | Always present (cartridge validation enforces safety block) |
 | **7. Language** | Hard-coded in `_build_language_instruction()` | "Always respond in Lithuanian" — never omitted | Always present |
@@ -42,7 +42,7 @@ This guarantees **live session integrity** (P21): if a teacher edits prompt file
 
 Resolution order: `session.prompt_snapshots` -> `PromptLoader.load_trickster_prompts(provider, task_id)`.
 
-The PromptLoader itself resolves: task-specific file -> default file -> None (layer skipped).
+The PromptLoader itself resolves each prompt type via fallback chain: `{type}_{provider_suffix}.md` -> `{type}_base.md` -> None (layer skipped). Provider suffixes: `"gemini"` -> `"gemini"`, `"anthropic"` -> `"claude"`.
 
 ---
 

@@ -59,25 +59,20 @@ Vinga builds the plumbing and 6 archetype tasks that prove the patterns. The tea
   - Medium-specific voice (narrator, friend, commenter)
   - Fourth wall break (AI literacy moment)
   - *Blocked by: V3* ✓
-  - *Note (V5): `next_task` endpoint doesn't reset session fields (exchanges, prompt_snapshots, turn_intensities, generated_artifacts) when switching tasks. Task history intentionally persists, but dialogue state from a previous task carries over. V4 or V6 should add explicit reset logic so the frontend doesn't inherit stale conversation state.*
+  - *Note (V5): Task-switch state reset was fixed in V4 Phase 1c — `/next` endpoint now resets exchanges, turn_intensities, prompt_snapshots, and generated_artifacts when switching tasks. Task history intentionally persists.*
 
-- [ ] **V4 — Student Game Experience** *(scaffold)*
+- [x] **V4 — Student Game Experience** *(scaffold)*
   - **Stack: Plain HTML + CSS + vanilla JS**, served from FastAPI's `static/` directory
   - Task rendering across medium types (including multimodal: image, audio, meme)
-  - **Social media feed renderers:** Many planned tasks (astroturfing detection, fear escalation feeds, fake petitions) present content as simulated social media posts with usernames, timestamps, engagement counts, comment threads. V4 needs PresentationBlock renderers for feed-style content — the backend serves these via the open type pattern, V4 renders them. See `FutureTaskList.md` for the 8 task concepts driving this need.
-  - Session flow, task transitions
-  - Trickster dialogue interface (SSE streaming via `EventSource` API)
-  - Reflection/journal prompts
+  - Social media feed renderers, meme renderer, search result tree, generic block fallback
+  - Session flow, task transitions, page-load recovery
+  - Trickster dialogue interface (SSE streaming — POST fetch + ReadableStream for /respond, EventSource for /debrief)
+  - All 4 interaction types: button, freeform, investigation, generation (empathy flip)
+  - Post-task flow: debrief streaming → reveal display → next task
+  - Error recovery, rate limit handling, static fallback, skip-task option
+  - Lithuanian i18n, accessibility (ARIA, keyboard navigation, focus management)
   - Browser-first, functional but not polished — no framework, no build step
-  - *If post-trial needs demand complex interactions (drag, real-time state), revisit framework choice with real evidence*
-  - *Blocked by: V5*
-
-- [ ] **V6 — Evaluation (MVP thin)**
-  - Per-task evaluation results (rubric-based)
-  - Session summary for students
-  - Anonymous class-level aggregation for teachers
-  - *Deferred to post-trial: radar profiles, cross-session pattern recognition, growth tracking — these require persistent student identity (see [AUTH.md](./AUTH.md))*
-  - *Blocked by: V5*
+  - *Blocked by: V5* ✓
 
 - [ ] **6 Archetype Tasks**
   - Adversarial Dialogue — multi-turn Trickster chat (e.g., The Phantom Quote)
@@ -86,9 +81,17 @@ Vinga builds the plumbing and 6 archetype tasks that prove the patterns. The tea
   - Clean Check — legitimate content, tests false-positive instinct
   - Guided Analysis — student analyses group dynamics with AI guidance, not by posting replies (e.g., The Wedge, redesigned 2026-02-25). Show neutralising reply patterns as examples, simulate forum reactions to different approaches.
   - Visual Manipulation — image-based deception: framing, cropping, context removal (e.g., The Misleading Frame — new concept 2026-02-25). Photograph from one angle misleads, second image reveals fuller context.
-  - *Blocked by: V5, V4*
+  - *Blocked by: V5, V4* ✓
   - *These are the reference implementations the team builds on*
   - *V2 ships 6 reference cartridges (2 full, 4 skeletons) that prove the format — archetypes are the playable end-to-end versions*
+  - *Tasks come before V6 — the evaluation layer must be informed by real teaching patterns, not theory*
+
+- [ ] **V6 — Evaluation & Session Intelligence**
+  - **Session-level student evaluation:** cross-task pattern analysis after a teacher-defined task bundle (the "session" — e.g., 3 tasks for today's lesson). Surfaces which manipulation patterns the student fell for repeatedly, where they improved, growth-framed language (not grades). "Facts from Data, Personalization from AI" — platform counts patterns programmatically, AI wraps them in personalised growth narrative.
+  - **Teacher-facing class aggregation:** anonymous patterns across students in a session. Which tasks had the highest trick success rate, which manipulation patterns the class struggles with, which students copy-pasted without analysis vs. engaged critically.
+  - **Per-task debrief refinement** is NOT V6 — that's a task authoring concern handled during archetype creation. The Trickster's post-task moment is content, not infrastructure.
+  - *Deferred to post-trial: radar profiles, cross-session pattern recognition, growth tracking — these require persistent student identity (see [AUTH.md](./AUTH.md))*
+  - *Blocked by: 6 Archetype Tasks (V6 scope is informed by real evaluation data from playable tasks)*
 
 ## Phase 4: Teacher Stream — *Team (post-archetypes)*
 
@@ -97,7 +100,7 @@ Vinga builds the plumbing and 6 archetype tasks that prove the patterns. The tea
   - Task assignment to classes
   - Class-level anonymous insights display
   - Functional for trial — no Composer integration yet
-  - *Blocked by: V4 scaffold + V6 thin (needs student-facing patterns and evaluation data)*
+  - *Blocked by: V4 scaffold + V6 (needs evaluation data and class aggregation)*
 
 - [ ] **V8 — Composer AI (Teacher Assistant)** *(post-trial)*
   - RAG over the task library
@@ -156,7 +159,7 @@ Vinga builds the plumbing and 6 archetype tasks that prove the patterns. The tea
 ## Dependency Map
 
 ```
-V1 ✓ ──→ V2 ✓ ──→ V3 ✓ ──→ V5 ✓ ──→ V4 scaffold (next) ──→ V6 thin ──→ 6 archetypes
+V1 ✓ ──→ V2 ✓ ──→ V3 ✓ ──→ V5 ✓ ──→ V4 ✓ ──→ 6 archetypes (next) ──→ V6
                         │                                              │
                         │      ┌───────────────────────────────────────┘
                         │      │
@@ -190,4 +193,4 @@ V1 ✓ ──→ V2 ✓ ──→ V3 ✓ ──→ V5 ✓ ──→ V4 scaffold 
 
 ---
 
-*Last updated: 2026-03-05*
+*Last updated: 2026-03-21*

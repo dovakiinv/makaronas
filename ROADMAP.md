@@ -37,7 +37,7 @@ Vinga builds the plumbing and 6 archetype tasks that prove the patterns. The tea
 
 ## Phase 2: AI Core — *Vinga*
 
-- [ ] **V3 — AI Integration Layer**
+- [x] **V3 — AI Integration Layer**
   - Model provider abstraction (Gemini, Claude, swappable)
   - Prompt loading from `prompts/` directory (plain Markdown, model-specific variants)
   - **Prompt existence validation:** V2 warns when `ai_driven`/`hybrid` cartridges lack a prompt directory. V3 must enforce — if V3 can't load prompts for a task, that task cannot serve AI phases. Hard error at prompt load time, not runtime.
@@ -48,17 +48,18 @@ Vinga builds the plumbing and 6 archetype tasks that prove the patterns. The tea
   - Input/output safety guardrails (jailbreak detection, PII scrubbing)
   - CacheLayer hook interface (define once access patterns are known — prompts, profiles, task metadata)
   - `prompts/README.md` — guide for team on editing prompts
-  - *Blocked by: V2*
+  - *Blocked by: V2* ✓
 
 ## Phase 3: Student Stream — *Vinga*
 
-- [ ] **V5 — Trickster AI Engine**
+- [x] **V5 — Trickster AI Engine**
   - Persona management, per-task prompt architecture
   - Multi-turn dialogue, student history adaptation
   - Freeform evaluation against rubrics
   - Medium-specific voice (narrator, friend, commenter)
   - Fourth wall break (AI literacy moment)
-  - *Blocked by: V3*
+  - *Blocked by: V3* ✓
+  - *Note (V5): `next_task` endpoint doesn't reset session fields (exchanges, prompt_snapshots, turn_intensities, generated_artifacts) when switching tasks. Task history intentionally persists, but dialogue state from a previous task carries over. V4 or V6 should add explicit reset logic so the frontend doesn't inherit stale conversation state.*
 
 - [ ] **V4 — Student Game Experience** *(scaffold)*
   - **Stack: Plain HTML + CSS + vanilla JS**, served from FastAPI's `static/` directory
@@ -155,7 +156,7 @@ Vinga builds the plumbing and 6 archetype tasks that prove the patterns. The tea
 ## Dependency Map
 
 ```
-V1 ✓ ──→ V2 ✓ ──→ V3 (next) ──→ V5 ──→ V4 scaffold ──→ V6 thin ──→ 6 archetypes
+V1 ✓ ──→ V2 ✓ ──→ V3 ✓ ──→ V5 ✓ ──→ V4 scaffold (next) ──→ V6 thin ──→ 6 archetypes
                         │                                              │
                         │      ┌───────────────────────────────────────┘
                         │      │
@@ -189,4 +190,4 @@ V1 ✓ ──→ V2 ✓ ──→ V3 (next) ──→ V5 ──→ V4 scaffold �
 
 ---
 
-*Last updated: 2026-02-26*
+*Last updated: 2026-03-05*

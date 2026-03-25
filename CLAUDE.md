@@ -174,3 +174,18 @@ Lithuanian is the exclusive language for all content, UI, and AI interactions. A
 - `content/taxonomy.json` — Known triggers, techniques, mediums. Warn-don't-block validation. Tags excluded (freeform).
 - `prompts/tasks/{task_id}/` — Prompt files (task.md base, model-specific overrides).
 - `backend/models.py` — Model IDs and capability tier mappings. Single source of truth for all model configuration.
+
+---
+
+## Deployment
+
+The team testing instance is deployed on **Railway** via CLI. No GitHub integration — deploy manually from the project directory.
+
+```bash
+# From /home/vinga/projects/makaronas:
+railway up
+```
+
+**Remind Vinga to run `railway up` after committing changes that the team should see.** Commits to main do NOT auto-deploy — manual push required.
+
+Environment variable `GOOGLE_API_KEY` is set on Railway's side (Variables tab in dashboard).

@@ -114,6 +114,21 @@ These are strong concepts from Grok's brainstorm and team discussions. They can 
 
 ---
 
+## Teacher-Configurable Tasks (Post-Trial)
+
+Team request: teachers want to use the same task *structure* with their own articles/content. E.g., the Tunguska rhetoric analysis task, but with a different article chosen by the teacher.
+
+**What this means for task design now:**
+- Trickster prompts should reference "the article" generically, not by specific content (e.g., "defend the claims in this article" not "defend the Tesla-Tunguska connection")
+- Evaluation patterns should be described in terms of technique type ("emotional language", "rhetorical questions") not specific instances ("the Tesla paragraph")
+- The cartridge format already supports this — article text is a presentation block, patterns are data. Swapping content is a JSON edit.
+
+**What this means for the platform later:**
+- A teacher-facing "create task from template" flow (simplified V8/Composer scope)
+- Template cartridges with placeholder content blocks
+- Validation that teacher-supplied content meets safety boundaries
+- This is post-trial — but designing prompts generically now avoids a rewrite later.
+
 ## Open Questions
 
 1. **Funder alignment** — Has the "AI content detection" framing been dropped? Does "workshops" mean facilitated group sessions or in-class individual work? Are older adults still in scope? *(Questions sent to team 2026-03-21)*

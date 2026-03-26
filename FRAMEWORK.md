@@ -42,7 +42,7 @@ The entire goal of this platform — and of AI within it — is to help students
 Every feature, every task, every AI interaction serves this purpose: teaching students to pause before reacting. Not to distrust everything — to think before they act. The pause is the outcome. Understanding is the path.
 - **Experience over lecture.** Students learn by being tricked, not by being told what tricks look like. They experience manipulation firsthand, then understand how and why it was constructed.
 - **Depth over checklists.** The goal isn't a memorised list of manipulation techniques — it's understanding how false narratives are created, who benefits, and why they spread. The methods are the surface; the motives and structures behind them are the lesson.
-- **Growth over scores.** No points, no grades, no leaderboards. The platform tracks patterns and growth, not performance.
+- **Engagement over grading.** The platform is gamified — progress markers, achievements, streaks, and rewards make learning feel like play, not homework. But gamification serves learning, not ranking. There are no grades, no teacher-visible scores, no academic assessment. The student's journey is their own. Gamification motivates; grading judges. We do the first, never the second.
 - **Break the chain.** Misinformation reaches teenagers through people they trust — a friend's story, a screenshot in a group chat, a parent's casual remark. The platform teaches students to verify before passing something on, not just to recognise manipulation when they see it.
 
 ### 2. Moral High Ground (The Non-Negotiable)

@@ -102,6 +102,13 @@ Vinga builds the plumbing and 6 archetype tasks that prove the patterns. The tea
   - Functional for trial — no Composer integration yet
   - *Blocked by: V4 scaffold + V6 (needs evaluation data and class aggregation)*
 
+- [ ] **Teacher-Configurable Tasks** *(post-trial)*
+  - Teachers create tasks from template structures with their own content (articles, images, comments)
+  - Template cartridges with placeholder content blocks — teacher fills in the article, patterns are auto-detected or manually tagged
+  - Validation that teacher-supplied content meets safety boundaries
+  - *Architecture already supports this — cartridge format separates structure from content. Trickster prompts must be written generically (reference "the article" not specific content) to enable this path.*
+  - *Blocked by: 6 Archetype Tasks (templates need proven task structures to templatise)*
+
 - [ ] **V8 — Composer AI (Teacher Assistant)** *(post-trial)*
   - RAG over the task library
   - Natural language → task sequence mapping

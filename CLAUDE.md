@@ -189,3 +189,13 @@ railway up
 **Remind Vinga to run `railway up` after committing changes that the team should see.** Commits to main do NOT auto-deploy — manual push required.
 
 Environment variable `GOOGLE_API_KEY` is set on Railway's side (Variables tab in dashboard).
+
+**Server restart gotcha:** The `--reload` flag watches Python files but NOT JSON cartridge files. When changing cartridge content (`task.json`), you must fully restart the server. The `pkill` + restart pattern sometimes leaves zombie processes holding the port. Use this to force a clean restart:
+
+```bash
+lsof -ti:8001 | xargs kill -9; sleep 3; /home/vinga/projects/makaronas/venv/bin/python -m uvicorn backend.main:app --host 0.0.0.0 --port 8001 --reload &
+```
+
+Always verify the new process started by checking the PID in the startup log.
+
+**Reveal text gotcha:** The green "Išvados" box on the reveal screen renders from `reveal.key_lesson` in the cartridge — NOT from the terminal phase's `trickster_content`. Both fields exist and are easy to confuse. If you update the reveal conclusions, update `reveal.key_lesson` — that's what the frontend displays. The `trickster_content` on the terminal phase appears as the Trickster's message above the green box.

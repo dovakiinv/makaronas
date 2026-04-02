@@ -139,7 +139,7 @@ Article B (the anti-Vaitkus one) has been posted on a popular Lithuanian student
 | SkaitmenineAteitisLT | Bot | "EduVault yra vienintelis saugus pasirinkimas! #EduVaultSaugu" | Account: 2 weeks old, 6 posts, all about EduVault |
 | TechMokslas2026 | Bot | Almost identical phrasing to SkaitmenineAteitisLT, same hashtag | Account: 3 weeks old, 4 posts, similar creation date |
 | RealusTėvas_Jonas | Troll | "Vaitkus turėtų sėdėti kalėjime! Girdėjau, kad jis ir iš namų jungiasi prie mokinių kamerų!" | Fabricated claim, personal attack, no evidence |
-| Gabija_K | Genuine sharer | "Wow, šitas straipsnis... Dalinu draugams, visi turi žinoti!" | Shared Article B without checking. Genuine person, no checking, just forwarding. |
+| Elena_K | Genuine sharer | "Wow, šitas straipsnis... Dalinu draugams, visi turi žinoti!" | Shared Article B without checking. Genuine person, no checking, just forwarding. |
 | NerPan_Neringa | Genuine voice | "Palaukit, aš pažįstu Vaitkų, jis ne toks žmogus. Ar kas nors patikrino šį straipsnį?" | Established account, asks questions, calm tone |
 | PatriotasVilnius | Troll | "O ką apie JŪSŲ privatumą TikToke? Visi duoda duomenis, ko čia verkti?" | Whataboutism — derails from the specific EduVault issue |
 
@@ -150,7 +150,7 @@ Article B (the anti-Vaitkus one) has been posted on a popular Lithuanian student
 - Makaronas: "Straipsnis paplito. Komentarai kaista. Bet kas čia tikras, o kas — ne?"
 - Student identifies bot patterns (coordinated phrasing, new accounts, same hashtag)
 - Student identifies troll tactics (fabricated claims, ad hominem, whataboutism)
-- The Gabija_K moment: "Ji tikra. Bet ji pasidalino neskaitydama. Tai ir yra grandinė, kurią reikia nutraukti."
+- The Elena_K moment: "Ji tikra. Bet ji pasidalino neskaitydama. Tai ir yra grandinė, kurią reikia nutraukti."
 - Neringa as the model of healthy scepticism
 
 ### Phase 2: Protest Photo (AI freeform — woven into Task 2)
@@ -194,7 +194,7 @@ A breather task — less writing, more observing. The student steps back from th
 Visual recap showing how the manufactured narrative spread:
 - The bot accounts from Task 2, their creation dates, their coordinated posting patterns
 - How the troll accounts amplified the bot messages
-- How genuine users like Gabija_K got pulled into sharing
+- How genuine users like Elena_K got pulled into sharing
 - The network diagram connecting it all back to the same source
 
 *Design note: Ideally includes an animated/video visualization showing the spread over time. Video generation of this concept hasn't produced clear enough results yet — may use static diagrams with annotations instead.*

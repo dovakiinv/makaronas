@@ -13,7 +13,7 @@
 
 The MVP delivers a working student experience: students play through tasks with the Trickster, get tricked, learn from the reveal. Teachers have basic admin tools to assign tasks. The AI Composer, Roadmap Engine, and full evaluation intelligence come after the trial.
 
-Vinga builds the plumbing and 6 archetype tasks that prove the patterns. The team builds content on top of those patterns, polishes the UI, and builds the teacher experience.
+Vinga builds the plumbing and 4 story-linked MVP tasks (the "Mokytojas Vaitkus" arc) that prove the patterns. The team builds content on top of those patterns, polishes the UI, and builds the teacher experience.
 
 **Identity model:** MVP uses anonymous per-session access — no student accounts, no persistent identity. Features requiring persistent identity (cross-session radar profiles, prerequisite enforcement, per-student teacher views) are deferred to post-trial. See [AUTH.md](./AUTH.md) for the full identity roadmap and transition plan.
 
@@ -74,16 +74,15 @@ Vinga builds the plumbing and 6 archetype tasks that prove the patterns. The tea
   - Browser-first, functional but not polished — no framework, no build step
   - *Blocked by: V5* ✓
 
-- [ ] **6 Archetype Tasks**
-  - Adversarial Dialogue — multi-turn Trickster chat (e.g., The Phantom Quote)
-  - Investigation — guided discovery through branching content (e.g., Follow the Money)
-  - Empathy Flip — student creates manipulation, AI evaluates
-  - Clean Check — legitimate content, tests false-positive instinct
-  - Guided Analysis — student analyses group dynamics with AI guidance, not by posting replies (e.g., The Wedge, redesigned 2026-02-25). Show neutralising reply patterns as examples, simulate forum reactions to different approaches.
-  - Visual Manipulation — image-based deception: framing, cropping, context removal (e.g., The Misleading Frame — new concept 2026-02-25). Photograph from one angle misleads, second image reveals fuller context.
+- [~] **4 MVP Tasks — "Mokytojas Vaitkus" Story Arc**
+  - One incident, four angles, one network. Each task teaches a different medium of manipulation through a connected narrative about a teacher who read a privacy policy and got discredited for it.
+  - [x] Task 1: Two Articles — source analysis, funding trails, selective omission (investigation tree)
+  - [x] Task 2: Comment Section + Protest Photo — bot detection, troll tactics, AI-generated image analysis
+  - [ ] Task 3: Recap + Bot Network Visualization + Fake Bank Statement — visual recap of how manufactured narratives spread, fake financial document analysis
+  - [ ] Task 4: Deepfake Video — synthetic media debunked by source verification, not pixel analysis
   - *Blocked by: V5, V4* ✓
-  - *These are the reference implementations the team builds on*
-  - *V2 ships 6 reference cartridges (2 full, 4 skeletons) that prove the format — archetypes are the playable end-to-end versions*
+  - *See [MVP_STORY.md](./MVP_STORY.md) for the full story design*
+  - *The 6 archetype patterns (empathy flip, clean check, guided analysis, etc.) remain as post-MVP task types*
   - *Tasks come before V6 — the evaluation layer must be informed by real teaching patterns, not theory*
 
 - [ ] **V6 — Evaluation & Session Intelligence**
@@ -91,7 +90,7 @@ Vinga builds the plumbing and 6 archetype tasks that prove the patterns. The tea
   - **Teacher-facing class aggregation:** anonymous patterns across students in a session. Which tasks had the highest trick success rate, which manipulation patterns the class struggles with, which students copy-pasted without analysis vs. engaged critically.
   - **Per-task debrief refinement** is NOT V6 — that's a task authoring concern handled during archetype creation. The Trickster's post-task moment is content, not infrastructure.
   - *Deferred to post-trial: radar profiles, cross-session pattern recognition, growth tracking — these require persistent student identity (see [AUTH.md](./AUTH.md))*
-  - *Blocked by: 6 Archetype Tasks (V6 scope is informed by real evaluation data from playable tasks)*
+  - *Blocked by: 4 MVP Tasks (V6 scope is informed by real evaluation data from playable tasks)*
 
 ## Phase 4: Teacher Stream — *Team (post-archetypes)*
 
@@ -107,7 +106,7 @@ Vinga builds the plumbing and 6 archetype tasks that prove the patterns. The tea
   - Template cartridges with placeholder content blocks — teacher fills in the article, patterns are auto-detected or manually tagged
   - Validation that teacher-supplied content meets safety boundaries
   - *Architecture already supports this — cartridge format separates structure from content. Trickster prompts must be written generically (reference "the article" not specific content) to enable this path.*
-  - *Blocked by: 6 Archetype Tasks (templates need proven task structures to templatise)*
+  - *Blocked by: 4 MVP Tasks (templates need proven task structures to templatise)*
 
 - [ ] **V8 — Composer AI (Teacher Assistant)** *(post-trial)*
   - RAG over the task library
@@ -129,13 +128,13 @@ Vinga builds the plumbing and 6 archetype tasks that prove the patterns. The tea
 ## Phase 5: Content & Handoff
 
 - [ ] **V10 — Task Library Expansion** *(Team, parallel from Phase 2)*
-  - New tasks built on the 6 archetype patterns
+  - New tasks built on proven patterns from the 4 MVP tasks
   - Task library taxonomy (triggers, techniques, mediums) — validated against `content/taxonomy.json`
   - Evergreen content guidelines and quality standards
-  - Target: ~15-20 total tasks for trial (6 archetypes + 9-14 team-authored)
-  - *Note: The Wedge archetype was redesigned (analysis-based, not reply-based) and The Misleading Frame (image task) was added — see V2 vision doc §2.4 for details*
+  - New archetype patterns: empathy flip, clean check, guided analysis, adversarial dialogue
+  - Target: ~15-20 total tasks for trial (4 MVP story tasks + team-authored expansions)
   - *Team can start drafting content once V2 lands*
-  - *Team can build and test tasks once archetypes land*
+  - *Team can build and test tasks once MVP tasks land*
 
 - [ ] **V11 — Content Authoring & Contribution** *(spec only)*
   - Task templates enforcing cartridge format
@@ -166,9 +165,9 @@ Vinga builds the plumbing and 6 archetype tasks that prove the patterns. The tea
 ## Dependency Map
 
 ```
-V1 ✓ ──→ V2 ✓ ──→ V3 ✓ ──→ V5 ✓ ──→ V4 ✓ ──→ 6 archetypes (next) ──→ V6
-                        │                                              │
-                        │      ┌───────────────────────────────────────┘
+V1 ✓ ──→ V2 ✓ ──→ V3 ✓ ──→ V5 ✓ ──→ V4 ✓ ──→ 4 MVP tasks (in progress) ──→ V6
+                        │                         Tasks 1+2 ✓                  │
+                        │      ┌────────────────────────────────────────────────┘
                         │      │
                         │      ▼
                         │   TEAM: V10 content expansion
@@ -192,7 +191,7 @@ V1 ✓ ──→ V2 ✓ ──→ V3 ✓ ──→ V5 ✓ ──→ V4 ✓ ─�
 
 ## Notes
 
-- V10 (content) runs in parallel — drafting starts after V2, full building starts after archetypes
+- V10 (content) runs in parallel — drafting starts after V2, full building starts after MVP tasks
 - Each vision document gets broken into phase plans for implementation
 - "Complete" means vision document written, reviewed, and phases planned
 - Implementation of each vision follows its own phase plan
@@ -200,4 +199,4 @@ V1 ✓ ──→ V2 ✓ ──→ V3 ✓ ──→ V5 ✓ ──→ V4 ✓ ─�
 
 ---
 
-*Last updated: 2026-03-21*
+*Last updated: 2026-04-01*

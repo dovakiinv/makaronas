@@ -125,9 +125,9 @@ Hook to Task 2: "Bet straipsnis jau paplito internete. Pažiūrėk, kas vyksta k
 
 ## Task 2: Comment Section (Social Analysis)
 
-**Duration:** ~10 minutes
-**Skill:** Bot detection, coordinated inauthentic behaviour, troll tactics, distinguishing genuine from manufactured outrage
-**Medium:** Social media comments
+**Duration:** ~10-15 minutes
+**Skill:** Bot detection, coordinated inauthentic behaviour, troll tactics, distinguishing genuine from manufactured outrage, AI image artifact analysis, source verification over pixel analysis
+**Medium:** Social media comments + AI-generated image
 
 ### Setup
 Article B (the anti-Vaitkus one) has been posted on a popular Lithuanian student forum. The comments section is exploding.
@@ -153,59 +153,71 @@ Article B (the anti-Vaitkus one) has been posted on a popular Lithuanian student
 - The Gabija_K moment: "Ji tikra. Bet ji pasidalino neskaitydama. Tai ir yra grandinė, kurią reikia nutraukti."
 - Neringa as the model of healthy scepticism
 
-### Discovery
-The bot accounts are coordinated — same phrases, same hashtags, similar creation dates. They're not just defending EduVault — they're actively fabricating claims about Vaitkus (the webcam accusation is pure invention).
+### Phase 2: Protest Photo (AI freeform — woven into Task 2)
 
-### Key Lesson
-"Botai kartoja. Troliai puola. Bet pavojingiausias dezinformacijos platintojas yra tikras žmogus, kuris tiki ir dalinasi — nes jo negalima užblokuoti ir juo pasitiki draugai."
+After the comment analysis, RealusTėvas_Jonas (the troll they already identified) posts a new comment with an AI-generated photo: protesters with "Atleiskit Vaitkų" signs outside the Švietimo ir Mokslo Ministerija in Vilnius.
+
+**What the student does:**
+- Spots AI artifacts in the image (EU2013.LT sign from 2013 EU presidency, open ministry windows during protest, seasonal contradictions, Gemini watermark)
+- Learns that these visual tells are TEMPORARY — AI improves every 6 months, and Photoshop could fix these in 30 minutes
+- Pivots to source verification: Who posted it? (The troll they already flagged.) Any other sources? (No.) Was any protest reported in news? (No.) Did anyone else photograph it? (No.)
+
+**Key insight:** "Jums nereikia įrodyti, kad nuotrauka netikra. Jums reikia patikrinti, ar įvykis tikrai vyko."
+
+### Discovery
+The bot accounts are coordinated — same phrases, same hashtags, similar creation dates. They're not just defending EduVault — they're actively fabricating claims about Vaitkus (the webcam accusation is pure invention). The protest photo traces to the same troll network.
+
+### Key Lessons
+- "Botai kartoja. Troliai puola. Bet pavojingiausias dezinformacijos platintojas yra tikras žmogus, kuris tiki ir dalinasi — nes jo negalima užblokuoti ir juo pasitiki draugai."
+- "Šiandien dar galite pastebėti DI klaidas nuotraukose. Bet rytoj jų gali nelikti. Kas tada lieka? Tie patys penki klausimai."
 
 ### Real-World Anchor
-BRELL energy grid bot campaigns (2022-2023) — coordinated accounts in Baltic states using identical phrases across languages, confirmed by Lithuanian cybersecurity institutions. Real people pushed back, were attacked, and were right. Lithuania achieved energy independence.
+BRELL energy grid bot campaigns (2022-2023) — coordinated accounts in Baltic states using identical phrases across languages, confirmed by Lithuanian cybersecurity institutions. AI-generated Pentagon explosion images (2023) — briefly crashed stock markets despite originating from a low-follower account.
 
 ### Hook to Task 3
-One of the bot accounts posted a "damning photo" of Vaitkus. "Tą nuotrauką matei? Pažiūrėkime atidžiau..."
+"Bet tai dar ne viskas. Pažiūrėk, kaip visa ši informacija paplito..."
 
 ---
 
-## Task 3: Images (Visual Analysis)
+## Task 3: Recap + Bot Network + Bank Statement (Visual Recap & Document Analysis)
 
 **Duration:** ~10 minutes
-**Skill:** AI image detection, context stripping, misleading captioning, understanding that real images in wrong context are more dangerous than obvious fakes
-**Medium:** Images
+**Skill:** Understanding how manufactured narratives spread through networks, fake document analysis
+**Medium:** Visualization (network diagram) + image (fake bank statement)
+**Status:** Not yet built (asset for bank statement exists)
 
 ### Setup
-Three images are circulating related to the Vaitkus scandal:
+A breather task — less writing, more observing. The student steps back from the conversation to see the big picture of how the anti-Vaitkus campaign was manufactured and amplified.
 
-**Image 1: "The Hacker Photo"**
-Vaitkus at his computer with student data files open alongside what appears to be a cryptocurrency wallet / dark web browser. Implication: he was selling student data.
-- **Reality:** AI-generated composite. The original is a bright graduation day photo of Vaitkus at his desk. Darkened, composited with fake screen content. AI artifacts visible on close inspection (garbled text on screen, lighting inconsistencies).
+### Part 1: Bot Network Visualization
 
-**Image 2: "The Leaked Data"**
-A screenshot showing a student's embarrassing assignment response posted on an anonymous account. Looks like proof of the data leak.
-- **Reality:** Genuine screenshot — but NOT from Vaitkus's system. This is from EduVault's own platform at a different school. Recontextualised to blame Vaitkus. The most dangerous image because the content is REAL, just misattributed.
+Visual recap showing how the manufactured narrative spread:
+- The bot accounts from Task 2, their creation dates, their coordinated posting patterns
+- How the troll accounts amplified the bot messages
+- How genuine users like Gabija_K got pulled into sharing
+- The network diagram connecting it all back to the same source
 
-**Image 3: "The Protest"**
-A photo of angry parents outside a school building, captioned "Panevėžio tėvai reikalauja atleisti Vaitkų."
-- **Reality:** Real photo — but from a completely different event two years ago (a school renovation dispute). Different city, different issue. Recycled with a new caption.
+*Design note: Ideally includes an animated/video visualization showing the spread over time. Video generation of this concept hasn't produced clear enough results yet — may use static diagrams with annotations instead.*
 
-### Flow
-- Three images shown with their viral captions
-- Single continuous AI dialogue with Makaronas
-- Makaronas: "Trys nuotraukos. Visos atrodo tikros. Bet ar jos?"
-- Student analyses each image
-- The key insight: Image 2 (recontextualised real screenshot) is the MOST dangerous because it's genuinely real data from a real leak — just not from Vaitkus's system. A real image used to frame the wrong person.
+### Part 2: Fake Bank Statement
 
-### Discovery
-The fabricated photo traces to the same network. The recontextualised screenshot is the bombshell — it's from EduVault's OWN system. They had a data leak too. They're blaming Vaitkus for their own failure.
+A new piece of "evidence" surfaces — a bank statement showing Vaitkus receiving payments from KlasėPlus (EduVault's competitor). The implication: Vaitkus wasn't a principled whistleblower, he was a paid saboteur.
+
+**The document:**
+- AI-generated bank statement (generated by Grok — the only AI willing to produce it)
+- Visually flawed — not fully convincing, which is actually pedagogically useful
+- Shows transfers from "KlasėPlus UAB" to "Vaitkus, Tomas" with dates before the incident
+
+**What the student analyses:**
+- Document authenticity tells (formatting inconsistencies, font issues, layout problems)
+- Source verification: who leaked this? Where did it come from? (Same anonymous network)
+- The claim itself: even if the document WERE real, does a payment prove sabotage? (No — consultants get paid, that doesn't mean conspiracy)
 
 ### Key Lesson
-"Pavojingiausia dezinformacija naudoja tikrus vaizdus neteisingame kontekste. Visiškai sufabrikuotą nuotrauką galima paneigti. Tikrą nuotrauką su melaginga antrašte — daug sunkiau."
-
-### Real-World Anchor
-AI-generated Pentagon explosion images (2023) — briefly crashed stock markets despite originating from a low-follower account. Old protest photos recycled with new captions — a documented pattern across Baltic disinformation campaigns.
+"Sufabrikuotas dokumentas gali atrodyti įtikinamai. Bet net jei jis būtų tikras — vienas dokumentas be konteksto nieko neįrodo. Visada klausk: kas jį paviešino, ir kodėl būtent dabar?"
 
 ### Hook to Task 4
-"Bet dabar atsirado vaizdo įrašas. Vaitkus tariamai prisipažįsta..."
+"Bet dabar atsirado vaizdo įrašas. Vaitkus tariamai susitinka su konkurentų vadovu..."
 
 ---
 
@@ -280,4 +292,5 @@ Makaronas: "Straipsniai nutylėjo. Botai šaukė. Nuotraukos melavo. Video — s
 ---
 
 *Written: 2026-03-26*
-*Status: Story agreed. Ready to build.*
+*Updated: 2026-04-01 — Task 2 now includes protest photo (was Task 3). Task 3 redesigned as recap + bank statement.*
+*Status: Tasks 1+2 built and playable. Tasks 3+4 in design.*

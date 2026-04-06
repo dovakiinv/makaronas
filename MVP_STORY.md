@@ -118,7 +118,7 @@ Discussion:
 
 **Phase 7 — Reveal (Static, terminal)**
 Full picture: funding map, privacy policy highlighted, Petryla's position (flawed but truthful).
-Key lesson: "Diskredituotas žmogus vis tiek gali sakyti tiesą. Patikimas šaltinis vis tiek gali ką nors slėpti. Tikrink teiginį — ne žmogų."
+Key lesson: "Diskredituotas žmogus vis tiek gali kelti svarbius klausimus. Patikimas šaltinis vis tiek gali ką nors slėpti. Tikrink teiginį — ne žmogų."
 Hook to Task 2: "Bet straipsnis jau paplito internete. Pažiūrėk, kas vyksta komentaruose..."
 
 ---

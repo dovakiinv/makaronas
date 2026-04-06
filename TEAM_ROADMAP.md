@@ -28,13 +28,13 @@ Makaronas teaches teenagers to recognize media manipulation through adversarial 
 | **V5 — Trickster Engine** | Mar 2026 | The Trickster's personality — adapts voice to each task type, tracks intensity, breaks the fourth wall to teach AI literacy, handles clean (no-trick) tasks, supports images |
 
 | **V4 — Student Experience** | Mar 2026 | The web interface students interact with — task display, Trickster chat, investigation trees, social media renderers, image lightbox, SSE streaming |
-| **Tasks 1+2 — Vaitkus Story** | Mar 2026 | Two articles investigation + comment section with protest photo analysis — playable end-to-end |
+| **Tasks 1+2 — Petryla Story** | Mar 2026 | Two articles investigation + comment section with protest photo analysis — playable end-to-end |
 
 **1,680 automated tests passing.** The plumbing is solid.
 
 ### What This Means in Plain Terms
 
-The backend AND the student-facing web interface are built and tested. The Trickster holds adversarial conversations in Lithuanian, adapts to different task types, evaluates student responses, and streams responses in real-time. Students can already play through Tasks 1 and 2 of the Vaitkus story arc end-to-end.
+The backend AND the student-facing web interface are built and tested. The Trickster holds adversarial conversations in Lithuanian, adapts to different task types, evaluates student responses, and streams responses in real-time. Students can already play through Tasks 1 and 2 of the Petryla story arc end-to-end.
 
 **What's left: 2 more tasks, evaluation infrastructure, and teacher tools.**
 
@@ -46,7 +46,7 @@ The backend AND the student-facing web interface are built and tested. The Trick
 
 | What | Status | What it means |
 |------|--------|---------------|
-| **Tasks 3+4 — Vaitkus Story** | Not started | Bot network visualization + fake bank statement, then deepfake video |
+| **Tasks 3+4 — Petryla Story** | Not started | Bot network visualization + fake bank statement, then deepfake video |
 | **V6 — Evaluation (thin)** | Not started | Per-task scores, session summaries, anonymous class stats for teachers |
 | **V7 — Teacher Dashboard** | Not started | Browse task library, assign tasks to classes, view class-level results |
 | **V10 — Content Expansion** | Can start now | New tasks following proven patterns. Target: ~15-20 total for trial |
@@ -63,7 +63,7 @@ The backend AND the student-facing web interface are built and tested. The Trick
 
 ---
 
-## The 4 MVP Tasks — "Mokytojas Vaitkus"
+## The 4 MVP Tasks — "Mokytojas Petryla"
 
 One incident, four angles, one network. A teacher read a privacy policy, built his own system, got discredited by the company he rejected. Each task teaches a different medium of manipulation through this connected story.
 
@@ -71,8 +71,8 @@ One incident, four angles, one network. A teacher read a privacy policy, built h
 |---|------|--------|----------------------|--------|
 | 1 | **Two Articles** | Text (articles) | Analyses two outlets covering the same incident — one corporate-funded, one ideologically biased. Investigates funding trails and the privacy policy. | ✓ Done |
 | 2 | **Comment Section + Protest Photo** | Social media + image | Identifies bots, trolls, and genuine sharers. Analyses an AI-generated protest photo — learns visual tells are temporary, source verification is permanent. | ✓ Done |
-| 3 | **Recap + Bot Network + Bank Statement** | Visualization + image | Visual recap of how the manufactured narrative spread. Analyses a fake bank statement "proving" Vaitkus was paid by competitors. | Not started |
-| 4 | **Deepfake Video** | Video | A fake surveillance video of Vaitkus meeting a competitor CEO. Debunked not by pixel analysis but by checking the calendar — the CEO was on another continent that day. | Not started |
+| 3 | **Recap + Bot Network + Bank Statement** | Visualization + image | Visual recap of how the manufactured narrative spread. Analyses a fake bank statement "proving" Petryla was paid by competitors. | Not started |
+| 4 | **Deepfake Video** | Video | A fake surveillance video of Petryla meeting a competitor CEO. Debunked not by pixel analysis but by checking the calendar — the CEO was on another continent that day. | Not started |
 
 Skills compound across tasks: source-checking from Task 1 becomes a tool in Task 4. Bot patterns from Task 2 help identify the fake channel in Task 4.
 
@@ -80,7 +80,7 @@ See [MVP_STORY.md](./MVP_STORY.md) for the full story design.
 
 ### Future Task Patterns (Post-MVP)
 
-The platform supports more task archetypes beyond the Vaitkus story:
+The platform supports more task archetypes beyond the Petryla story:
 - **Empathy Flip** — student creates manipulation, AI evaluates (see [EMPATHY_FLIP_CONCEPT.md](./EMPATHY_FLIP_CONCEPT.md))
 - **Clean Check** — no manipulation present, tests false-positive instinct
 - **Adversarial Dialogue** — real-time debate with the Trickster
@@ -218,7 +218,7 @@ These are real and planned, but they ship **after** the 5-school trial. The arch
 | **Advanced evaluation** (radar profiles, pattern recognition) | MVP has per-task scores + session summaries. Deeper analytics need more data and persistent identity |
 | **Additional archetype tasks** | Empathy flip, clean check, guided analysis, adversarial dialogue — these patterns exist in the engine but aren't in the MVP story arc |
 
-**The line is clear:** MVP delivers a working student experience with the Trickster through the 4-task Vaitkus story arc, basic evaluation, and enough teacher tools to run a trial. Everything that needs real usage data or persistent student identity waits until after.
+**The line is clear:** MVP delivers a working student experience with the Trickster through the 4-task Petryla story arc, basic evaluation, and enough teacher tools to run a trial. Everything that needs real usage data or persistent student identity waits until after.
 
 ---
 

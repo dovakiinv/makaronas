@@ -13,7 +13,7 @@
 
 The MVP delivers a working student experience: students play through tasks with the Trickster, get tricked, learn from the reveal. Teachers have basic admin tools to assign tasks. The AI Composer, Roadmap Engine, and full evaluation intelligence come after the trial.
 
-Vinga builds the plumbing and 4 story-linked MVP tasks (the "Mokytojas Vaitkus" arc) that prove the patterns. The team builds content on top of those patterns, polishes the UI, and builds the teacher experience.
+Vinga builds the plumbing and 4 story-linked MVP tasks (the "Mokytojas Petryla" arc) that prove the patterns. The team builds content on top of those patterns, polishes the UI, and builds the teacher experience.
 
 **Identity model:** MVP uses anonymous per-session access — no student accounts, no persistent identity. Features requiring persistent identity (cross-session radar profiles, prerequisite enforcement, per-student teacher views) are deferred to post-trial. See [AUTH.md](./AUTH.md) for the full identity roadmap and transition plan.
 
@@ -74,7 +74,7 @@ Vinga builds the plumbing and 4 story-linked MVP tasks (the "Mokytojas Vaitkus" 
   - Browser-first, functional but not polished — no framework, no build step
   - *Blocked by: V5* ✓
 
-- [~] **4 MVP Tasks — "Mokytojas Vaitkus" Story Arc**
+- [~] **4 MVP Tasks — "Mokytojas Petryla" Story Arc**
   - One incident, four angles, one network. Each task teaches a different medium of manipulation through a connected narrative about a teacher who read a privacy policy and got discredited for it.
   - [x] Task 1: Two Articles — source analysis, funding trails, selective omission (investigation tree)
   - [x] Task 2: Comment Section + Protest Photo — bot detection, troll tactics, AI-generated image analysis

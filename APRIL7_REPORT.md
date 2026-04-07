@@ -8,14 +8,16 @@
 
 ## Trumpa santrauka
 
-Platforma veikia. AI dialogas (Triksteris) ir vertintojas neturi techninių klaidų — visos `discuss` fazės buvo įvertintos kaip `on_success`. Bet **pirmoji užduotis per ilga 30 minučių sesijai**, ir **paskutinė jos fazė (`write_article`) turi UX problemą**, dėl kurios 20 mokinių užstrigo, nors aktyviai bandė rašyti savo žinutę draugams.
+Platforma veikia. AI dialogas (Makaronas) ir vertintojas neturi techninių klaidų — visos `discuss` fazės buvo įvertintos kaip `on_success`. Bet **pirmoji užduotis per ilga 30 minučių sesijai**, ir **paskutinė jos fazė (`write_article`) turi UX problemą**, dėl kurios 20 mokinių užstrigo — pusė jų pritrūko laiko, kita pusė bandė rašyti, bet Makaronas reikalavo „sujungti viską į vieną žinutę", net kai studentai jau buvo padengę abu punktus per keletą atskirų atsakymų.
 
 **Trumpai:**
 - 80 iš 93 mokinių (86%) baigė bent dalį 1 užduoties
 - Tik 18 pasiekė 2 užduotį
 - Tik 4 baigė visas 4 užduotis
 - Mediana laiko 1 užduočiai: **17 minučių iš 30** (~57% sesijos)
-- **20 mokinių (25% iš baigusiųjų `discuss`) užstrigo `write_article` fazėje** ne iš tinginystės, o todėl, kad Triksteris vis klausė "o kaip dėl..." vietoj to, kad priimtų jų atsakymą
+- **20 mokinių (25% iš baigusiųjų `discuss`) užstrigo `write_article` fazėje:**
+  - **10 mokinių pritrūko laiko** — gavo Makarono raginimą rašyti, bet niekada nespėjo atsakyti arba tik vieną kartą
+  - **10 mokinių bandė rašyti**, bet Makaronas atmetė jų atsakymus, nes reikalavo, kad **abu radiniai būtų vienoje žinutėje** — net jei mokiniai jau juos buvo paminėję per kelias atskiras žinutes
 
 ---
 
@@ -63,7 +65,7 @@ Trumpas atsakymas: **taip, bet ne visada**.
 - **Trumpos žinutės (2-5 žodžių):** 33%
 - **Ilgesnės žinutės (>20 žodžių):** 16%
 
-Maždaug **38% atsakymų yra <5 žodžių** — tai daugiau "patvirtinimas" Triksteriui nei savarankiškas mąstymas. Bet 16% — gilūs, analitiniai atsakymai. Tai tikras spektras.
+Maždaug **38% atsakymų yra <5 žodžių** — tai daugiau "patvirtinimas" Makaronui nei savarankiškas mąstymas. Bet 16% — gilūs, analitiniai atsakymai. Tai tikras spektras.
 
 ### Pavyzdžiai
 
@@ -90,7 +92,7 @@ Trumpi, bet tikslūs faktai. Mokiniai supranta, bet rašo glaustai.
 > "Nelabai radau, ar gali padėt atrasti"
 > "o kaip man zinoti kokie šaltiniai finansuoja, ir koks tikslas kokio atsakyko ieskom cia?"
 
-Šie mokiniai rodo, kad jie **norėtų suprasti, bet nežino, ko Triksteris nori**. Tai signalas, kad instrukcijos kai kur galėtų būti aiškesnės.
+Šie mokiniai rodo, kad jie **norėtų suprasti, bet nežino, ko Makaronas nori**. Tai signalas, kad instrukcijos kai kur galėtų būti aiškesnės.
 
 ---
 
@@ -98,44 +100,105 @@ Trumpi, bet tikslūs faktai. Mokiniai supranta, bet rašo glaustai.
 
 **Tai pats svarbiausias šios ataskaitos atradimas.**
 
-20 mokinių (25% visų, kurie baigė `discuss` fazę) **niekada nepabaigė** `write_article` fazės. Bet jie ne tinginiavo — telemetrijos duomenys rodo, kad jie **bandė vidutiniškai 6 kartus** rašyti savo žinutę draugams (vienas mokinys bandė net 12 kartų).
+20 mokinių (25% visų, kurie baigė `discuss` fazę) niekada nepabaigė `write_article` fazės. Tai NĖRA mokinių apsileidimas — telemetrijos duomenys rodo, kad jie aktyviai bandė. Bet kai pažvelgėme giliau, problema pasirodė esanti dvejopa.
 
-### Ką iš tiesų atrodo
+### Ką iš tikrųjų užduotis prašo
 
-`write_article` fazė turėtų leisti mokiniams parašyti trumpą žinutę draugams pagal tai, ką jie sužinojo. Bet vietoj to, kad priimtų bet kokį pagrįstą atsakymą, **Triksteris vis tęsia mokyti** klausimais "o kaip konkrečiai?", "o kas dėl X?".
+`write_article` fazė prašo mokinio parašyti **vieną žinutę draugams**, kurioje būtų **abu** pagrindiniai radiniai:
+1. Mokytojas Petryla padarė klaidą (jo paties užrašai apie sistemą — „patikrinti pirmadienį", bet niekada nepatikrino)
+2. „EduVault" privatumo politika saugo mokinių duomenis 10 metų
 
-**Tikras pavyzdys (sesija 13426738...):**
+Ši vieninga žinutė nėra atsitiktinė — ji bus „paskelbta" ir parodyta 2-ojoje užduotyje (komentarų skiltyje), tarsi mokinys ją būtų patalpinęs grupės pokalbyje. Tai pedagogiškai svarbu: studentas pamato, kaip jo paties žodžiai grįžta į kontekstą.
+
+### Tų 20 užstrigusių mokinių anatomija
+
+| Kas atsitiko | Mokinių |
+|---|---|
+| Gavo Makarono raginimą rašyti, bet visiškai nespėjo atsakyti — laiko trūkumas | 6 |
+| Atsakė vieną kartą, Makaronas paprašė daugiau, neatsakė | 5 |
+| Atsakė 2-3 kartus, Makaronas vis ragino | 3 |
+| Atsakė 4+ kartus — užstrigo cikle | 2 |
+| Niekada nepasiekė rašymo raginimo (užfiksuoti `discuss` užbaigime) | 4 |
+
+Iš esmės: **maždaug pusė tiesiog pritrūko laiko**. Kita pusė — **bandė rašyti, bet užstrigo cikle**, kurį sukūrė pats Makarono prompt'as.
+
+### Ką rodo tikri dialogai
+
+Štai mokinys (sesija `13426738`), kuris **padengė abu punktus** per atskiras žinutes, bet niekada nebaigė užduoties:
 
 ```
-Mokinys: "Manau istorijos iškraipymas"
-Triksteris: "Iškraipymas – skamba rimtai. Bet kaip konkrečiai tai daroma?"
+Mokinys: "Jie turi zinoti, kad ne tik i straipsnio patekta informacija reikia
+         remtis... pacio asmens papasakota istorija is kurios kai kuriuos
+         faktus isima... ir pats mokytojas nebuvo baiges konfiguracijos"
+                                                    ↑ PETRYLOS KLAIDA PAMINĖTA
 
-Mokinys: "Nutylejo del to, kad mokytojo buvo perspeta, jog sistema nesaugi"
-Triksteris: [klausia daugiau]
+Makaronas: "Gera pradžia, Petrylos klaidą jau paminėjote. Bet nepamirškite
+           antrosios medalio pusės..."
 
-Mokinys: "Nezinau"
-Triksteris: [klausia dar]
+Mokinys: "Jus galita naudoti sia programa, bet perskaitykite atidziai...
+         ar jums reikia jog duomenis saugotu 10 metu"
+                                       ↑ PRIVATUMO PROBLEMA PAMINĖTA
 
-[...dar 9 bandymai...]
+Makaronas: "Beveik pavyko! Bet... žinutėje turi būti aiškiai paminėti abu
+           dalykai KARTU"
 
-Sesija pasibaigia. Užduotis nepabaigta.
+Mokinys: "Petryla perspejo apie sauguma, bet jo nepaklause o pats eduvault
+         nera saugi programa"
+
+Makaronas: "Jūs paminėjote perspėjimą, bet pamiršote jo paties užrašus..."
+
+[...dar bandymai, bet sesija baigiasi nepabaigta...]
 ```
 
-Mokinys turi visus reikalingus duomenis. Mokinys parašė rimtą atsakymą. Bet Triksteris niekada nepasako "gerai, tai geras atsakymas, eikime toliau". Vietoj to jis vis klausia "o dar?", kol baigiasi laikas.
+**Mokinys padengė abu punktus.** Tik per skirtingas žinutes. Makaronas reikalavo „sujungti į vieną" ir niekada nepriėmė atskirų atsakymų kaip pakankamų. Tai nėra mokytojiškumo klausimas — tai realus UX šuolis.
 
-**Šis ciklas yra tas pats visuose 20 atvejų.** Tai ne UI klaida ir ne mokinių problema — tai Triksterio elgesio arba vertintojo nustatymo problema specialiai `write_article` fazėje.
+### Skausmingiausias atvejis (sesija `30abd776`)
+
+Šis mokinys padengė viską detaliai per visą dialogą, parašė ilgus apgalvotus atsakymus. Po to, kai Makaronas vis prašė „sujungti", mokinys parašė:
+
+> **„Tai jau parašiau ir sakiau"**
+> *(Makaronas vėl klausia)*
+> **„As jau parašiau zinute pakartok ka as parašiau arba padaryk tu"**
+
+Mokinys buvo teisus. Jis tikrai jau buvo viską parašęs. Bet Makarono reikalavimas „vienos sujungtos žinutės" pavertė sėkmingą mokymosi pokalbį į varginantį ciklą.
+
+### Mažesnis, bet juokingas atvejis (sesija `2927331f`)
+
+Po puikiai atlikto tyrimo, šis mokinys pradėjo `write_article` fazę savo žinutę draugams būtent tokia pradžia, kokios mes ir prašome („žinutė į grupės pokalbį"):
+
+> **„hey, ar matete naujineas"**
+
+Tai literally yra natūraliausias įmanomas pradėjimas — paauglio žinutė į grupės pokalbį. Bet Makaronas atsakė:
+
+> *„Gera pradžia, bet draugai juk iškart paklaus: 'Kokių naujienų?'..."*
+
+Užuot priėmęs tai kaip natūralų žinutės pradžią ir leidęs studentui tęsti, Makaronas paragino iš karto pateikti viską. Studentas neatsakė.
+
+### Vinga'os hipotezė buvo teisinga, bet ne visai
+
+Vinga galvojo, kad mokiniai neperpranta abiejų pusių. **Realiai jie perprato** — net 10 iš 20 užstrigusių mokinių aktyviai paminėjo abu punktus dialogo metu. Bet Makaronas jų neatpažino kaip „visos žinutės", nes ieškojo vieno sujungto sakinio.
 
 ### Kodėl tai svarbu
 
-Jei pataisytume šią vieną problemą — **20 mokinių iš 93 (21% visos klasės) būtų sėkmingai pabaigę 1 užduotį**. Tai didžiulis šuolis baigimo rodikliuose tik nuo vieno pataisymo.
+Jei pataisytume šią vieną problemą — **bent 10 papildomų mokinių (11% visos klasės)** būtų sėkmingai pabaigę 1 užduotį. Plius 6 mokiniai, kurie pritrūko laiko, gautų kelias papildomas minutes, jei būtų sutrumpintos ankstesnės fazės. Iš viso ~16-20 papildomų sesijų galėtų pasiekti pabaigą — tai didžiulis šuolis nuo vieno tikslinio pataisymo.
+
+### Apribojimas, kurio negalime pamiršti
+
+Mes negalime tiesiog leisti, kad mokiniai siųstų bet kiek atskirų žinučių. Užduoties dizainas reikalauja **vienos** vieningos žinutės, nes ji bus „paskelbta" ir rodoma 2-ojoje užduotyje kaip mokinio žinutė klasės draugams. Be vienos žinutės, antroji užduotis nebeveikia.
+
+**Sprendimas: AI sintezė.** Kai dialogo metu mokinys padengia abu punktus (per vieną ar per kelias žinutes), Makaronas turi pats sujungti tai į vieną žinutę ir parodyti studentui:
+
+> *„Gerai — jūsų žinutė draugams: 'Petryla pamiršo patikrinti sistemos užrašus, o EduVault saugo mūsų duomenis 10 metų. Tikrinkit, ką diegiat.' Tai paskelbsime jūsų klasės draugams. Eikime toliau."*
+
+Studentas pamato, kas bus paskelbta. Jam nereikia patikrinti, ar viskas „sujungta teisingai". Jam nereikia kovoti su Makaronu dėl formuluotės. AI padaro sintezę pats, nes AI yra geras šitame.
 
 ---
 
 ## 5. Pirmojo "stalo" mokiniai (5 atvejai)
 
-5 mokiniai užstrigo **`discuss` fazėje** ir niekada nepasiekė `write_article`. Šie mokiniai aktyviai dalyvavo (mediana 10 dialogo posūkių, vidutinė žinutės ilgis 52 simboliai) — jiems tiesiog **pritrūko laiko**, kol Triksteris sutiko, kad jie supranta.
+5 mokiniai užstrigo **`discuss` fazėje** ir niekada nepasiekė `write_article`. Šie mokiniai aktyviai dalyvavo (mediana 10 dialogo posūkių, vidutinė žinutės ilgis 52 simboliai) — jiems tiesiog **pritrūko laiko**, kol Makaronas sutiko, kad jie supranta.
 
-Tai antras Triksterio elgesio signalas: net `discuss` fazė kartais reikalauja daugiau posūkių nei turime laiko.
+Tai antras Makarono elgesio signalas: net `discuss` fazė kartais reikalauja daugiau posūkių nei turime laiko.
 
 ---
 
@@ -149,22 +212,28 @@ Tai antras Triksterio elgesio signalas: net `discuss` fazė kartais reikalauja d
 - **Visos `discuss` fazės baigėsi `on_success`** — vertintojas dirba savo darbą
 - **Tinklo užduotyje (3-ioji) nėra `exchange` įrašų** — tai tikėtasi (statinė užduotis)
 
-Techniniai dalykai veikia. Problema — pedagoginis tempas ir Triksterio elgesys konkrečioje fazėje.
+Techniniai dalykai veikia. Problema — pedagoginis tempas ir Makarono elgesys konkrečioje fazėje.
 
 ---
 
 ## 7. Rekomendacijos — kas keisti pirmiausia
 
-### Prioritetas 1: pataisyti `write_article` šuolį (didžiausias ROI)
+### Prioritetas 1: AI sintezė `write_article` fazėje (didžiausias ROI)
 
-Triksterio prompt'as `write_article` fazei turi leisti **priimti pirmą pagrįstą atsakymą** ir pereiti toliau. Šiuo metu jis veikia kaip mokytojas, kuris vis sako "o dar?". Jis turėtų veikti kaip draugas, kuris sako "supratau, gerai".
+Makarono prompt'as `write_article` fazei turi nustoti reikalauti, kad mokinys pats „sujungtų" abu radinius į vieną žinutę. Vietoj to, kai dialogo metu (per `discuss` ir `write_article`) mokinys padengia abu punktus — net jei per kelias atskiras žinutes — **Makaronas turi pats juos sujungti į vieną tekstą ir parodyti studentui** kaip „štai tavo žinutė draugams, ją paskelbsime".
 
 Konkrečiai:
-- Vertintojo `write_article` checklist'as turi būti **trumpas** (1-2 punktai, ne 5)
-- `min_exchanges` `write_article` fazei turi būti **1** (ne 3)
-- Triksterio prompt'as turi aiškiai sakyti: "kai mokinys parašė savo žinutę, **PRIIMK** ją, neklausk daugiau"
+- **AI sintezė vietoj reikalavimo „sujungti".** Makaronas seka, ar abu radiniai paminėti dialoge. Kai jie paminėti, jis sukomponuoja vieną sklandų sakinį-žinutę ir parodo studentui patvirtinimui.
+- **Studentas mato, kas bus „paskelbta".** Tai išsprendžia du dalykus iš karto: pašalina varginantį „sujunk pats" ciklą ir suteikia studentui pasitenkinimo jausmą („mano žodžiai virto kažkuo realiu").
+- **Vertintojo `write_article` checklist'as turi būti trumpas.** Jis tikrina tik tiek: ar AI sintezė įvyko, ar studentas ją priėmė.
+- Sukurta sintezė tampa artefaktu, kuris išsaugomas į `session.generated_artifacts` ir parodomas 2-ojoje užduotyje (kaip dabar).
 
-**Tikėtinas poveikis:** ~20 papildomų baigtų sesijų (+22%).
+**Failai, kuriuos reikia keisti:**
+- `prompts/tasks/task-petryla-001/trickster_base.md` — perrašyti `write_article` skyrių, instruktuoti AI sintezę vietoj reikalavimo sujungti
+- `backend/ai/trickster.py` — užtikrinti, kad student_article artefakto saugojimo kelias gali priimti AI sugeneruotą sintezę (ne tik paskutinę studento žinutę)
+- `content/tasks/task-petryla-001/task.json` — `evaluator_checklist` `write_article` fazei pakoreguoti
+
+**Tikėtinas poveikis:** ~10 papildomų mokinių (cikle užstrigusieji) baigia užduotį iš karto. Plius 6 mokiniai, kurie pritrūko laiko, gauna kelias minutes atgal, jei sutrumpinsime ir ankstesnes fazes (žr. Prioritetas 2). Iš viso ~16-20 papildomų baigtų sesijų — +18-22% baigimo rodiklis nuo vieno tikslinio promtų pataisymo.
 
 ### Prioritetas 2: sutrumpinti pasiruošimą 1 užduočiai (~3-5 min taupymas)
 
@@ -193,7 +262,7 @@ Tik 18 mokinių pasiekė 2 užduotį, todėl mes neturime patikimų duomenų api
 
 1. **Turinys veikia.** Mokiniai sugeba sekti pinigų pėdsakus, atpažinti motyvuotą šališkumą, ir parašyti savo nuomonę. Tie atsakymai, kuriuos mes matome (žr. citatas aukščiau), yra būtent tai, ko mes mokome.
 
-2. **AI veikia.** Triksteris ir vertintojas neturi techninių klaidų. Kiekviena dialogo sesija pasiekė `on_success`. Promptai veikia.
+2. **AI veikia.** Makaronas ir vertintojas neturi techninių klaidų. Kiekviena dialogo sesija pasiekė `on_success`. Promptai veikia. Bet `write_article` fazės prompt'as yra per griežtas — mokiniai jį padengia, bet ne taip, kaip Makaronas tikisi.
 
 3. **Tempo nesutampa.** Turinys yra ~50 minučių vertės. Pamoka yra 30 minučių. Reikia arba sutrumpinti turinį, arba ilgesnių pamokų. Pirmas variantas yra realistiškesnis.
 

@@ -179,6 +179,8 @@ Lithuanian is the exclusive language for all content, UI, and AI interactions. A
 
 ## Deployment
 
+**GitHub remote:** `https://github.com/DID-org/makaronas.git` — the repo lives under the **DID-org** organization, not Vinga's personal account. Her personal handle is `dovahkiin-v` (renamed from an older one without the hyphen), but `makaronas` is under DID-org. If `git push` fails with "repository not found," check the remote URL first — a stale remote pointing at her personal account is the usual cause.
+
 The team testing instance is deployed on **Railway** via CLI. No GitHub integration — deploy manually from the project directory.
 
 ```bash
